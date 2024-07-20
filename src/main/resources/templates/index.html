@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank XYZ</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+        .form-group label {
+            min-width: 80px;
+        }
+        .form-group input {
+            max-width: 300px;
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Bank XYZ</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link btn btn-secondary btn-sm" th:href="@{/Owner/new}">Join</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Bank XYZ</h1>
+        <p class="lead">We are a bank committed to excellence in financial services. We offer a wide range of products and solutions to meet your financial needs.</p>
+        <hr class="my-4">
+        <p>Ready to start managing your money smartly? Sign in or join now.</p>
+        <form action="Owner/read_owner.html" method="post">
+            <div class="form-group">
+                <label for="dni">DNI</label>
+                <input type="text" class="form-control" id="dni" name="dni" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+        </form>
+        <a th:href="@{/Owner/new}" class="btn btn-secondary btn-sm mt-3">Join</a>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
